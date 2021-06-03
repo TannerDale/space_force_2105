@@ -38,6 +38,8 @@ class Flotilla
   def ready_ships(fuel)
     ready = []
     personnel_by_ship.each do |ship, personnel|
-      ready << if 
+      ready << ship if ship.fuel > fuel && personnel.length >= ship.requirements.length
+    end
+    ready
   end
 end
