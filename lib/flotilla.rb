@@ -19,7 +19,7 @@ class Flotilla
   def recommend_personnel(ship) # I think I messed this up!
     recommend = []
     @personnel.each do |person|
-      ship.requirements.each do |requirement|
+      ship.requirements.each do |requirement|            # X is bad but couldn't think of name 
         recommend << person if person.specialties.any?{|x|  requirement.keys.include?(x)} && person.experience > requirement.values.sum
       end
     end
